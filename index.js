@@ -46,7 +46,15 @@ function getPizzaOrder() {
   // if the user has added toppings, add toppingsFee multiplied by
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
-  
+    if (toppings == "") {
+      alert("Confirming you want a plain cheese pizza (no toppings)");
+      pizza.toppings = [];
+    } else {
+      toppings.split(",");
+      toppings = topping=>topping;
+      // toppings.sort();
+      getPizzaOrder = getPizzaOrder + (toppings.length*toppingsFee)
+    }
 
 
   var extraCheese = confirm("Would you like extra cheese?")
