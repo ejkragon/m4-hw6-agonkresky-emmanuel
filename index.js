@@ -11,15 +11,20 @@ function getPizzaOrder() {
   var pizza = {
     // set the 'cost' property to the basePrice
     // YOUR CODE HERE
-    basePrice: 10
+    cost: [basePrice],
     // cost: [
       // extraCheeseUpcharge = 1.5,
       // thickCrustUpcharge = 2,
       // deliveryFee = 3.5,
       // toppingsFee = 1.5
     // ],
+    addCosts: function(costs) {
+     this.cost.push(costs)
    }
-  
+  }
+ 
+
+
   // var pizzaCost = basePrice + cost,
 
   var crust = prompt(`Please enter the type of crust (${formatPrice(thickCrustUpcharge)} upcharge for Thick crust)`)
@@ -30,9 +35,9 @@ function getPizzaOrder() {
   // to pizza.cost
   // YOUR CODE HERE
     if (crust && crust.toLowerCase() && crust.trim() == 'thick') {
-      alert("Ok, we will prepare your pizza on our thick crust!");
-      pizza.crust = 'thick';
-      getPizzaOrder = getPizzaOrder + thickCrustUpcharge;
+      // alert("Ok, we will prepare your pizza on our thick crust!");
+      pizza.crust == 'thick';
+      pizza.addCosts(thickCrustUpcharge);
     } else {
       alert("OK, we will give you the traditional crust instead of our thick crust")
       pizza.crust = 'regular';
@@ -48,11 +53,11 @@ function getPizzaOrder() {
   // YOUR CODE HERE
     if (toppings == "") {
       alert("Confirming you want a plain cheese pizza (no toppings)");
-      pizza.toppings = [];
+      pizza.toppings == [];
     } else {
       toppings.split(",");
-      pizza.toppings = toppings;
-      getPizzaOrder = getPizzaOrder + (toppings.length*toppingsFee)
+      pizza.toppings == toppings;
+      pizza.addCosts(toppings.length*toppingsFee);
     }
 
 
@@ -62,11 +67,11 @@ function getPizzaOrder() {
   // if the user specifies extra cheese, add extraCheeseUpcharge to pizza.cost
   // YOUR CODE HERE
     if (extraCheese == true) {
-      alert("Okay, we will add extra cheese on your pizza!");
+      // alert("Okay, we will add extra cheese on your pizza!");
       pizza.extraCheese = true;
-      getPizzaOrder = getPizzaOrder + extraCheeseUpcharge;
+      pizza.addCosts(extraCheeseUpcharge)
     } else {
-      alert("Okay, we will not add any additional cheese on your pizza");
+      // alert("Okay, we will not add any additional cheese on your pizza");
       pizza.extraCheese = false;
     }
 
@@ -76,7 +81,14 @@ function getPizzaOrder() {
   // if order is NOT for delivery, set pizza.saleType to "take-out"
   // if order if for delivery, add deliveryFee to pizza.cost
   // YOUR CODE HERE
-
+    if (isDelivery == true) {
+      alert("Great! We should have your pizza out to you within the hour!");
+      pizza.saleType == "delivery";
+      pizza.addCosts(deliveryFee)
+    } else {
+      alert ("Great! For your safety, we are now offering curbside pickup.");
+      pizza.saleType == "take-out";
+    }
 
 
   return pizza
