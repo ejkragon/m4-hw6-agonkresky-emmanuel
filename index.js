@@ -51,8 +51,7 @@ function getPizzaOrder() {
       pizza.toppings = [];
     } else {
       toppings.split(",");
-      toppings = topping=>topping;
-      // toppings.sort();
+      pizza.toppings = toppings;
       getPizzaOrder = getPizzaOrder + (toppings.length*toppingsFee)
     }
 
@@ -62,7 +61,14 @@ function getPizzaOrder() {
   // if the user specifies extra cheese, set pizza.extraCheese to true or false
   // if the user specifies extra cheese, add extraCheeseUpcharge to pizza.cost
   // YOUR CODE HERE
-
+    if (extraCheese == true) {
+      alert("Okay, we will add extra cheese on your pizza!");
+      pizza.extraCheese = true;
+      getPizzaOrder = getPizzaOrder + extraCheeseUpcharge;
+    } else {
+      alert("Okay, we will not add any additional cheese on your pizza");
+      pizza.extraCheese = false;
+    }
 
   var isDelivery = confirm("Is your order for Delivery?")
   // HINT: confirm() returns a boolean
