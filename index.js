@@ -11,7 +11,7 @@ function getPizzaOrder() {
   var pizza = {
     // set the 'cost' property to the basePrice
     // YOUR CODE HERE
-    cost: 10,
+    cost: basePrice,
     // cost: [
       // extraCheeseUpcharge = 1.5,
       // thickCrustUpcharge = 2,
@@ -20,7 +20,7 @@ function getPizzaOrder() {
     // ],
     // addCosts: function(costs) {
     //  this.cost.push(costs)
-   }
+   };
   
  
 
@@ -36,7 +36,7 @@ function getPizzaOrder() {
   // YOUR CODE HERE
     if (crust && crust.toLowerCase() && crust.trim() == 'thick') {
       // alert("Ok, we will prepare your pizza on our thick crust!");
-      pizza.crust == 'thick';
+      pizza.crust = 'thick';
       pizza.cost += thickCrustUpcharge;
     } else {
       alert("OK, we will give you the traditional crust instead of our thick crust")
@@ -51,15 +51,15 @@ function getPizzaOrder() {
   // if the user has added toppings, add toppingsFee multiplied by
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
-    if (toppings == "") {
+    if (toppings = "") {
       alert("Confirming you want a plain cheese pizza (no toppings)");
-      pizza.toppings == [];
+      pizza.toppings = [];
     } else {
-      toppings.split(",");
-      pizza.toppings == toppings;
-      pizza.cost += toppings.length*toppingsFee;
+      pizza.toppings = [toppings.split(",")];
+      // toppings = pizza.toppings;
+      // toppings.length;
+      pizza.cost += pizza.toppings.length * toppingsFee;
     }
-
 
   var extraCheese = confirm("Would you like extra cheese?")
   // HINT: confirm() returns a boolean
@@ -83,11 +83,11 @@ function getPizzaOrder() {
   // YOUR CODE HERE
     if (isDelivery == true) {
       alert("Great! We should have your pizza out to you within the hour!");
-      pizza.saleType == "delivery";
+      pizza.saleType = "delivery";
       pizza.cost += deliveryFee
     } else {
       alert ("Great! For your safety, we are now offering curbside pickup.");
-      pizza.saleType == "take-out";
+      pizza.saleType = "take-out";
     }
 
 
