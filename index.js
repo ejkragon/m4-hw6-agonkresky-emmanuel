@@ -55,10 +55,10 @@ function getPizzaOrder() {
       alert("Confirming you want a plain cheese pizza (no toppings)");
       pizza.toppings = [];
     } else {
-      pizza.toppings = [toppings.split(",")];
+      topping = [toppings.split(",")];
       // toppings = pizza.toppings;
       // toppings.length;
-      pizza.cost += pizza.toppings.length * toppingsFee;
+      pizza.cost += toppings.length * toppingsFee;
     }
 
   var extraCheese = confirm("Would you like extra cheese?")
