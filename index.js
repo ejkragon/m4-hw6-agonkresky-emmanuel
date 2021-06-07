@@ -55,9 +55,14 @@ function getPizzaOrder() {
       alert("Confirming you want a plain cheese pizza (no toppings)");
       pizza.toppings = [];
     } else {
-      topping = [toppings.split(",")];
-      // toppings = pizza.toppings;
-      // toppings.length;
+      // topping = [toppings && toppings.split(",")];
+      // pizza.toppings = toppings.split(",");
+      // pizza.toppings = 'toppings.split(",")';
+      // var toppings = [toppings].join(",");
+      // toppings = toppings.split(",");
+      // toppings.length = toppings.join(",");
+      // toppings = pizza.toppings && pizza.toppings.filter(topping => topping).length > 0;
+      toppings = ['toppings.split(",")'];
       pizza.cost += toppings.length * toppingsFee;
     }
 
