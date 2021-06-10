@@ -23,13 +23,12 @@ function getPizzaOrder() {
   // to pizza.cost
   // YOUR CODE HERE
     pizza.crust = crust
-    if (crust.toLowerCase().trim() == 'thick') {
-      // alert("Ok, we will prepare your pizza on our thick crust!");
-      pizza.crust = 'thick';
-      pizza.cost += thickCrustUpcharge;
+    if (crust.toLowerCase().trim() === 'thick') {
+      pizza.crust = 'thick'
+      pizza.cost += thickCrustUpcharge
     } else {
-      alert("OK, we will give you the traditional crust instead of our thick crust");
-      pizza.crust == 'regular';
+      alert("OK, we will give you the traditional crust instead of our thick crust")
+      pizza.crust === 'regular'
     }
 
 
@@ -40,14 +39,14 @@ function getPizzaOrder() {
   // if the user has added toppings, add toppingsFee multiplied by
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
-    pizza.toppings = [toppings];
-    toppingsArray = toppings.split(",");
+    pizza.toppings = [toppings]
+    toppingsArray = toppings.split(",")
     if (toppings == "") {
-      alert("Confirming you want a plain cheese pizza (no toppings)");
-      pizza.toppings = [];
+      alert("Confirming you want a plain cheese pizza (no toppings)")
+      pizza.toppings = []
     } else {
-      toppings = [toppingsArray];
-      pizza.cost += toppingsArray.length * toppingsFee;
+      toppings = [toppingsArray]
+      pizza.cost += toppingsArray.length * toppingsFee
     }
 
   var extraCheese = confirm("Would you like extra cheese?")
@@ -55,9 +54,9 @@ function getPizzaOrder() {
   // if the user specifies extra cheese, set pizza.extraCheese to true or false
   // if the user specifies extra cheese, add extraCheeseUpcharge to pizza.cost
   // YOUR CODE HERE
-    pizza.extraCheese = extraCheese;
+    pizza.extraCheese = extraCheese
     if (extraCheese == true) {
-      pizza.extraCheese == true;
+      pizza.extraCheese == true
       pizza.cost += extraCheeseUpcharge
     } else {
       pizza.extraCheese == false
@@ -70,12 +69,12 @@ function getPizzaOrder() {
   // if order if for delivery, add deliveryFee to pizza.cost
   // YOUR CODE HERE
     if (isDelivery == true) {
-      alert("Great! We should have your pizza out to you within the hour!");
-      pizza.saleType = "delivery";
-      pizza.cost += deliveryFee;
+      alert("Great! We should have your pizza out to you within the hour!")
+      pizza.saleType = "delivery"
+      pizza.cost += deliveryFee
     } else {
-      alert ("Your pizza should be ready for pick-up in 30 minutes.");
-      pizza.saleType = "take-out";
+      alert ("Your pizza should be ready for pick-up in 30 minutes.")
+      pizza.saleType = "take-out"
     }
 
   return pizza
