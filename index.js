@@ -11,22 +11,10 @@ function getPizzaOrder() {
   var pizza = {
     // set the 'cost' property to the basePrice
     // YOUR CODE HERE
-    cost: basePrice,
-    // cost: [
-      // extraCheeseUpcharge = 1.5,
-      // thickCrustUpcharge = 2,
-      // deliveryFee = 3.5,
-      // toppingsFee = 1.5
-    // ],
-    // addCosts: function(costs) {
-    //  this.cost.push(costs)
-   };
+    cost: basePrice
+   }
   
  
-
-
-  // var pizzaCost = basePrice + cost,
-
   var crust = prompt(`Please enter the type of crust (${formatPrice(thickCrustUpcharge)} upcharge for Thick crust)`)
   // set the pizza object's 'crust' property to the user's response
   // HINT: prompt() returns a string
@@ -40,9 +28,9 @@ function getPizzaOrder() {
       pizza.crust = 'thick';
       pizza.cost += thickCrustUpcharge;
     } else {
-      alert("OK, we will give you the traditional crust instead of our thick crust")
+      alert("OK, we will give you the traditional crust instead of our thick crust");
       pizza.crust == 'regular';
-    }; 
+    }
 
 
   var toppings = prompt("Please enter additional toppings (comma separated)")
@@ -52,21 +40,13 @@ function getPizzaOrder() {
   // if the user has added toppings, add toppingsFee multiplied by
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
-    pizza.toppings = [toppings]
-    toppingsArray = toppings.split(",")
+    pizza.toppings = [toppings];
+    toppingsArray = toppings.split(",");
     if (toppings == "") {
       alert("Confirming you want a plain cheese pizza (no toppings)");
       pizza.toppings = [];
     } else {
-      // topping = [toppings && toppings.split(",")];
-      // pizza.toppings = toppings.split(",");
-      // pizza.toppings = 'toppings.split(",")';
-      // var toppings = [toppings].join(",");
-      // toppings = toppings.split(",");
-      // toppings.length = toppings.join(",");
-      // toppings = pizza.toppings && pizza.toppings.filter(topping => topping).length > 0;
-      // toppings = ['toppings.split(",")'];
-      toppings = [toppingsArray]
+      toppings = [toppingsArray];
       pizza.cost += toppingsArray.length * toppingsFee;
     }
 
@@ -75,14 +55,12 @@ function getPizzaOrder() {
   // if the user specifies extra cheese, set pizza.extraCheese to true or false
   // if the user specifies extra cheese, add extraCheeseUpcharge to pizza.cost
   // YOUR CODE HERE
-    pizza.extraCheese = extraCheese
+    pizza.extraCheese = extraCheese;
     if (extraCheese == true) {
-      // alert("Okay, we will add extra cheese on your pizza!");
       pizza.extraCheese == true;
       pizza.cost += extraCheeseUpcharge
     } else {
-      // alert("Okay, we will not add any additional cheese on your pizza");
-      pizza.extraCheese == false;
+      pizza.extraCheese == false
     }
 
   var isDelivery = confirm("Is your order for Delivery?")
@@ -91,16 +69,14 @@ function getPizzaOrder() {
   // if order is NOT for delivery, set pizza.saleType to "take-out"
   // if order if for delivery, add deliveryFee to pizza.cost
   // YOUR CODE HERE
-    
     if (isDelivery == true) {
       alert("Great! We should have your pizza out to you within the hour!");
       pizza.saleType = "delivery";
-      pizza.cost += deliveryFee
+      pizza.cost += deliveryFee;
     } else {
-      alert ("Great! For your safety, we are now offering curbside pickup.");
+      alert ("Your pizza should be ready for pick-up in 30 minutes.");
       pizza.saleType = "take-out";
     }
-
 
   return pizza
 }
