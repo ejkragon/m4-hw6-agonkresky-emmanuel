@@ -27,7 +27,7 @@ function getPizzaOrder() {
       pizza.crust = 'thick'
       pizza.cost += thickCrustUpcharge
     } else {
-      alert("OK, we will give you the traditional crust instead of our thick crust")
+      // alert("OK, we will give you the traditional crust instead of our thick crust")
       pizza.crust === 'regular'
     }
 
@@ -41,11 +41,11 @@ function getPizzaOrder() {
   // YOUR CODE HERE
     pizza.toppings = [toppings]
     toppingsArray = toppings.split(",")
+    pizza.toppings = toppingsArray
     if (toppings == "") {
-      alert("Confirming you want a plain cheese pizza (no toppings)")
+      // alert("Confirming you want a plain cheese pizza (no toppings)")
       pizza.toppings = []
     } else {
-      toppings = [toppingsArray]
       pizza.cost += toppingsArray.length * toppingsFee
     }
 
@@ -69,11 +69,11 @@ function getPizzaOrder() {
   // if order if for delivery, add deliveryFee to pizza.cost
   // YOUR CODE HERE
     if (isDelivery == true) {
-      alert("Great! We should have your pizza out to you within the hour!")
+      // alert("Great! We should have your pizza out to you within the hour!")
       pizza.saleType = "delivery"
       pizza.cost += deliveryFee
     } else {
-      alert ("Your pizza should be ready for pick-up in 30 minutes.")
+      // alert ("Your pizza should be ready for pick-up in 30 minutes.")
       pizza.saleType = "take-out"
     }
 
